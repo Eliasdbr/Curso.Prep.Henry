@@ -1,0 +1,23 @@
+Explicación de conceptos
+
+Arrays:
+La utilidad de los Arrays viene cuando necesitamos ponerle nombre a un conjunto de variables,
+ya que cada variable contiene un sólo dato. En el caso de que quisiéramos recurrir a una lista
+del supermercado, en lugar de buscar la variable para cada elemento, podemos crear
+una sola variable con el nombre de "listaSuper" y asignar todos los productos dentro
+de la misma.
+Ej: 
+// var elemento1 = "pan";
+// var elemento2 = "leche";
+// var elemento3 = "huevos";
+
+se traduciría a:
+
+// var listaSuper = ["pan","leche","huevos"];
+
+y en el caso de necesitar un sólo elemento del array, sólo bastaría con indicar su posición
+(empezando desde el 0) entre dos corchetes:
+
+// console.log(listaSuper[0]);  // "pan"
+// console.log(listaSuper[1]);  // "leche"
+// console.log(listaSuper[2]);  // "huevos"

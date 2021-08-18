@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\Proyectos\\C\\tutorial_c"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.asm": "asm6502",
+			"cstdio": "c"
+		}
+	}
+}

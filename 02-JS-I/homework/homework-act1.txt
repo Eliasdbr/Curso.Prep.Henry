@@ -1,0 +1,35 @@
+Explicación de conceptos.
+
+Varables:
+Una variable es algo que contiene un dato o información y que puede ser accedida mediante un nombre. 
+El contenido de una variable puede ir cambiando durante el transcurso del programa.
+Ésta puede contener datos como: 
+    Números
+    Strings
+    Booleanos
+
+Strings:
+Son un tipo de variable que contienen caracteres tales como texto. Su contenido siempre debe estar
+entre comillas (").
+Ej: "Elias", "ABC123", "¡Hola, mundo!"
+
+Funciones:
+Las funciones son pedacitos de código los cuales se pueden usar repetidas veces. En algunas ocasiones,
+éstas pueden estar acompañadas de argumentos, que son datos que recibe la función para luego procesarlos.
+Además, las funciones pueden "devolver" datos, con la palabra clave "return"; y es útil si queremos obtener
+algún dato fuera del alcance la función.
+
+Declaraciones IF:
+La declaración if es un tipo de control de flujo del programa. determina qué camino seguirá el programa,
+dependiendo de la comparación de diferentes valores.
+Vendría a ser el equivalente a decir: "Si A es mayor a B, hacer una cosa. Si no, hacer otra.".
+Traduciendo lo de arriba a código, sería: 
+if (a > b) { 
+    hacerUnaCosa();
+} else { 
+    hacerOtra();
+}
+
+Valores Booleanos:
+Éste tipo de dato tiene dos tipos de valores: Verdadero o Falso, 1 o 0, Sí o No; y se representa como "true"
+o "false".

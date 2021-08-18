@@ -1,0 +1,17 @@
+Explicación de conceptos:
+
+For:
+El bucle "for" es una estructura la cual se utiliza para repetir varias veces 
+un pedazo de código. Se puede repetir una cantidad constante de veces, o también 
+puede usar una variable para determinar cuántas veces se repite.
+
+&&, ||, !:
+Los operadores lógicos toman dos expresiones booleanas y las combinan de diferentes
+maneras:
+&&: "And". Devuelve verdadero si y sólo si las dos expresiones son verdaderas. Si no, devuelve falso.
+||: "Or". Devuelve verdadero si cualquiera de las dos expresiones son verdaderas. Si no, devuelve falso.
+
+El siguiente operador lógico, a diferencia de los anteriores, toma una sóla expresión booleana. (!expression)
+!: Devuelve el inverso de lo que diga la expresión.
+    Ej.: Si la expresión es verdadera, devuelve falso y viceversa.
+

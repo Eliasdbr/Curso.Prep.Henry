@@ -60,14 +60,14 @@ function sonIguales(x, y) {
   // Devuelve "true" si "x" e "y" son iguales
   // De lo contrario, devuelve "false"
   // Tu código:
-  return (x == y);
+  return (x === y);
 }
 
 function tienenMismaLongitud(str1, str2) {
   // Devuelve "true" si las dos strings tienen la misma longitud
   // De lo contrario, devuelve "false"
   // Tu código:
-  return (str1.length == str2.length);
+  return (str1.length === str2.length);
 }
 
 function menosQueNoventa(num) {
@@ -94,14 +94,14 @@ function esPar(num) {
   // Devuelve "true" si "num" es par
   // De lo contrario, devuelve "false"
   // Tu código:
-  return (num % 2 == 0);
+  return (num % 2 === 0);
 }
 
 function esImpar(num) {
   // Devuelve "true" si "num" es impar
   // De lo contrario, devuelve "false"
   // Tu código:
-  return (num % 2 == 1);
+  return (num % 2 === 1);
 }
 
 function elevarAlCuadrado(num) {
@@ -148,7 +148,7 @@ function esPositivo(numero) {
   //Si el número es positivo, devolver ---> "Es positivo"
   //Si el número es negativo, devolver ---> "Es negativo"
   //Si el número es 0, devuelve false
-  if (numero == 0) {
+  if (numero === 0) {
     return false;
   } else if (numero > 0) {
     return "Es positivo";

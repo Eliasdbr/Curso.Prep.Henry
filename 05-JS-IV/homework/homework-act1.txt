@@ -1,0 +1,37 @@
+Explicación de conceptos
+
+Objetos:
+En javascript, los objetos son muy similares a los arrays, con la diferencia de que cada variable o "propiedad"
+puede tener un nombre en lugar de un número de índice. Además, los objetos pueden contener funciones o "métodos"
+como un tipo de propiedad.
+
+Propiedades:
+Dentro de un objeto, pueden contenerse varios datos con su respectivo nombre. A esto le llamamos "propiedades"
+y funcionan exactamente igual a las variables, sólo que son propias de ese objeto y su alcance es dentro de su
+respectivo objeto.
+
+Métodos:
+Cuando hablamos de métodos, hablamos de una función común y corriente, pero que se puede ejecutar desde el
+contexto de un objeto. La ventaja de los métodos es que podemos utilizar la misma función para diferentes
+objetos y que ésta trabaje dentro del alcance de ese objeto. Ésto se puede lograr con la palabra clave "this".
+
+Bucle for...in:
+Javascript contiene otro tipo de bucle "for" que es muy similar, pero está adaptado para los objetos.
+Si queremos evaluar cada propiedad de un objeto con un bucle "for" convencional, no podremos, ya que 
+los objetos no contienen sus propiedades enumeradas, si no, que se identifican con "claves" o "nombres".
+Por lo tanto, el bucle "for x in objeto" nos permite evaluar cada propiedad sin la preocupacion de enumerarlas.
+Ej.:
+//  for x in objeto {
+//      console.log(x)  // mostrará en la consola el contenido de cada propiedad.  
+//  }
+
+Notación de puntos vs Notación de corchetes:
+Para acceder a una propiedad de un objeto, podemos usar dos maneras:
+Notación de puntos:     objeto.propiedad
+    Ventaja: Es más facil de escribir.
+    Desventaja: El nombre de propiedad debe ser literal, no se aceptan variables.
+Notación de corchetes:  objeto["propiedad"]
+    Ventaja: Se pueden usar variables para poner el nombre de propiedad, 
+            deshaciéndonos de las comillas.
+
+

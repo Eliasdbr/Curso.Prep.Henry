@@ -1,0 +1,29 @@
+Explicación de conceptos.
+
+Como en JS podemos utilizar funciones como si fueran variables, podemos usarlas como argumentos
+de otras funciones. Esto permite mucha flexibilidad para programar. Los callbacks son funciones
+podemos ejecutar dentro de otras funciones, proporcionadas por los argumentos de estas últimas.
+Un ejemplo de uso es hacer más modulares las funciones.
+Ejemplo:
+    function porcentaje(cantidad,total) {
+        return (cantidad / total) * 100;
+    }
+
+    function sumar(n1,n2) {
+        return n1 + n2;
+    }
+
+    function dividir(num,denom) {
+        return num / denom;
+    }
+
+    // si queremos generalizar una funcion que muestre un mensaje y procese dos valores de alguna forma:
+    function informarCalculo(mensaje,num1,num2,callback) {
+        console.log(mensaje + callback(num1,num2))
+    }
+
+    //Podemos usar esta simple llamada para obtener el porcentaje.
+    informarCalculo("El porcentaje es: ",42,128,porcentaje);
+    // y esta para la suma, por ejemplo.
+    informarCalculo("La suma entre los dos números es: ",7,2,sumar);
+    

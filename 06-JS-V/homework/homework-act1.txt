@@ -1,0 +1,30 @@
+Explicación de conceptos
+
+Prototype:
+El prototipo o "prototype", es un elemento base al que puede acceder un objeto en caso de no contar 
+por sí mismo con ese elemento. Es como una propiedad por defecto que no se ve, pero que sí está.
+Esta característica de Javascript está diseñada para que los objetos puedan acceder a un sólo método
+en común, sin tener que repetirlo para cada uno. Ésto ayuda a reducir el uso de memoria usada por el 
+código. Si algún objeto no posee dicho método, lo irá a buscar a su prototipo.
+Ej.:
+    Si queremos agregar el método "metodo" a la clase "Clase":
+
+    Clase.prototype.metodo = function() {
+        return this.prop1 + this.prop2;
+    };
+
+
+Constructors:
+Un constructor es una función que determina las propiedades de una Clase. Y una que usamos la palabra
+clave "new", estamos llamando a ese Constructor para que nos cree un objeto siguiendo la plantilla
+que determinamos en la Clase creada.
+Ej.:
+    // Función constructora:
+    Clase = function(arg1,arg2){
+        this.prop1 = arg1;
+        this.prop2 = arg2;
+    }
+
+    //Así creamos una instancia de la clase:
+    var objeto = new Clase("hola","mundo"); // Crea un Objeto a partir de la Clase. Llama a la función constructora.
+

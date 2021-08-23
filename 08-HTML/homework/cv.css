@@ -1,0 +1,95 @@
+/* cv.css - Reglas de estilo para cv.html */
+* {
+    color: rgb(255, 241, 226);
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    border-radius: 8px;
+}
+body {
+    background-color: #141007;
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    margin: 0;
+}
+h1 {
+    display: block;
+    text-align: center;
+    margin: 1px;
+}
+h3 {
+    display: block;
+    color: rgb(226, 163, 92);
+    background-color: rgba(228, 170, 105, 0.1);
+    padding-left: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin: 8px 8px 0 0;
+}
+h4 {
+    margin: 2px;
+}
+p {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+a {
+    color:rgb(253, 164, 62)
+}
+.lista {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(255, 228, 196, 0.1);
+    margin: 4px;
+}
+.parrafo {
+    text-align: justify;
+    margin: 8px 18% 32px 32px;
+}
+.lateral {
+    z-index: 1;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    height: 98%;
+    grid-column: 1;
+    background-color: rgba(255, 228, 196, 0.1);
+    margin: 4px;
+    padding: 0;
+    border: 0;
+}
+.main {
+    grid-column: 2;
+}
+.tablaTiempoItems {
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    margin: 2px;
+}
+.tablaTiempo {
+    grid-column: 1;
+    background-color: rgba(255, 228, 196, 0.2);
+    margin:  2px;
+    text-align: center;
+    font-size: 1.2em;
+}
+.tablaItem {
+    grid-column: 2;
+    /* background-color: rgba(255, 228, 196, 0.2); */
+    border: 1px solid rgba(255, 228, 196, 0.1);
+    margin: 2px;
+    padding-left: 16px;
+}
+
+#fotoCarnet {
+    display: block;
+    position: relative;
+    width: 200px;
+    margin: 8px;
+}
+.datosPers {
+    width: 220px;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}

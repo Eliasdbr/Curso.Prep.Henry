@@ -1,0 +1,34 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: url("./homework_bg.jpg");
+    background-color: #202020;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    font-family: Verdana, Arial, sans-serif;
+    color: bisque;
+}
+h1 {
+    display: block;
+    color: goldenrod;
+    background-color: #9c4900;
+}
+a {
+    color: goldenrod;
+}
+img {
+    width: 400px;
+}
+#thirdDiv {
+    align-self: center;
+    width: 500px;
+    height: 600px;
+    background-color: rgba(.1,.1,.1,.5);
+    padding: 50px;
+    border: 4px, inset, chocolate;
+}
+#spanId {
+    font-size: 18px;
+    margin: 50px;
+}

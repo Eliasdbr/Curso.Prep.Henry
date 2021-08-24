@@ -10,6 +10,12 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+  var array = [];
+  for (x in objeto) {
+    var elemento = [x,objeto[x]];
+    array.push(elemento);
+  }
+  return array;
 }
 
 
@@ -18,6 +24,12 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  var letrasContadas = {};
+  while (string.length > 0) {
+    letrasContadas[string[0]] = string.match(string[0]).length;
+    string.replace(string[0],"");
+  }
+  return letrasContadas;
 }
 
 
@@ -26,6 +38,13 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  var str1 = "";
+  var str2 = "";
+  for (var i=0; i<s.length; i++) {
+    if (s[i] === s[i].toUpperCase) str1.push(s[i]);
+    else str2.push(s[i]);
+  }
+  return str1 + str2;
 }
 
 
@@ -35,6 +54,16 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+  var fraseInvertida = "";
+  var palabras = str.split(" ");
+  for (var i=0; i<palabras.length; i++) {
+    var plbrInv = "";
+    for (var j=0; j<palabras[i].length; j++) {
+      plbrInv.unshift(palabras[i][j]);
+    }
+    fraseInvertida += plbrInv + " ";
+  }
+  return fraseInvertida.trim();
 } 
 
 
@@ -43,6 +72,13 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  var digitos = numero.toString();
+  var digsInv = "";
+  for (var i=0; i<digitos.length; i++) {
+    digsInv.unshift(digitos[i]);
+  }
+  if (digitos === digsInv) return "Es capicua";
+  else return "No es capicua";
 }
 
 

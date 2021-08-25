@@ -26,10 +26,12 @@ function numberOfCharacters(string) {
   //Escribe tu código aquí
   var letrasContadas = {};
   while (string.length > 0) {
-    letrasContadas[string[0]] = string.match(string[0]).length;
-    string.replace(string[0],"");
-  }
-  return letrasContadas;
+    var frstChar = new RegExp(string[0],"g");
+    var arrMatches = string.match(frstChar).length
+    if (arrMatches !== 0) letrasContadas[string[0]] = arrMatches; 
+    string = string.replace(frstChar,"");
+  } 
+  return letrasContadas;  //Devuelve un objeto de más...
 }
 
 
@@ -41,8 +43,8 @@ function capToFront(s) {
   var str1 = "";
   var str2 = "";
   for (var i=0; i<s.length; i++) {
-    if (s[i] === s[i].toUpperCase) str1.push(s[i]);
-    else str2.push(s[i]);
+    if (s[i] === s[i].toUpperCase()) str1 += s[i];
+    else str2 += s[i];
   }
   return str1 + str2;
 }
@@ -58,8 +60,8 @@ function asAmirror(str) {
   var palabras = str.split(" ");
   for (var i=0; i<palabras.length; i++) {
     var plbrInv = "";
-    for (var j=0; j<palabras[i].length; j++) {
-      plbrInv.unshift(palabras[i][j]);
+    for (var j=palabras[i].length-1; j>=0; j--) {
+      plbrInv += palabras[i][j];
     }
     fraseInvertida += plbrInv + " ";
   }
@@ -74,8 +76,8 @@ function capicua(numero){
   //Escribe tu código aquí
   var digitos = numero.toString();
   var digsInv = "";
-  for (var i=0; i<digitos.length; i++) {
-    digsInv.unshift(digitos[i]);
+  for (var i=digitos.length-1; i>=0; i--) {
+    digsInv += digitos[i];
   }
   if (digitos === digsInv) return "Es capicua";
   else return "No es capicua";
@@ -86,6 +88,8 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+
+  return cadena.replace(/[abc]/g,"");
 }
 
 
@@ -93,6 +97,12 @@ function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+  function ordena(elem1,elem2) {
+    return elem1.length - elem2.length;
+  }
+  return arr.sort(ordena);
+  // tambien:
+  // return arr.sort((elem1, elem2) => elem1.length - elem2.length);
 }
 
 
@@ -102,6 +112,12 @@ function buscoInterseccion(arreglo1, arreglo2){
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí  
+  function intersec(elemento) {
+    return arreglo2.indexOf(elemento) !== -1;
+  }
+  return arreglo1.filter(intersec);
+  // tambien :
+  // return arreglo1.filter(elemento => arreglo2.indexOf(elemento) !== -1);
 }
 
 

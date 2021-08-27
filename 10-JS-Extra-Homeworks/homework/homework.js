@@ -66,6 +66,11 @@ function asAmirror(str) {
     fraseInvertida += plbrInv + " ";
   }
   return fraseInvertida.trim();
+  /*
+  Mejor forma:
+
+  }
+  */
 } 
 
 
@@ -75,10 +80,7 @@ function capicua(numero){
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
   var digitos = numero.toString();
-  var digsInv = "";
-  for (var i=digitos.length-1; i>=0; i--) {
-    digsInv += digitos[i];
-  }
+  var digsInv = digitos.split('').reverse().join('');
   if (digitos === digsInv) return "Es capicua";
   else return "No es capicua";
 }

@@ -24,14 +24,24 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  // Primer intento:
+  // var letrasContadas = {};
+  // while (string.length > 0) {
+  //   var frstChar = new RegExp(string[0],"g");
+  //   var arrMatches = string.match(frstChar).length
+  //   if (arrMatches !== 0) letrasContadas[string[0]] = arrMatches; 
+  //   string = string.replace(frstChar,"");
+  // } 
+  // return letrasContadas;
+  // Segundo intento:
   var letrasContadas = {};
-  while (string.length > 0) {
-    var frstChar = new RegExp(string[0],"g");
-    var arrMatches = string.match(frstChar).length
-    if (arrMatches !== 0) letrasContadas[string[0]] = arrMatches; 
-    string = string.replace(frstChar,"");
-  } 
-  return letrasContadas;  //Devuelve un objeto de más...
+  var letrasSeparadas = string.split('');
+  letrasSeparadas.forEach(elemento => {
+    letrasContadas[elemento] = letrasSeparadas.reduce((acc,elemRepe) => {
+      return acc + (+(elemRepe === elemento));
+    },0);
+  });
+  return letrasContadas;
 }
 
 
@@ -40,13 +50,14 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
-  var str1 = "";
-  var str2 = "";
-  for (var i=0; i<s.length; i++) {
-    if (s[i] === s[i].toUpperCase()) str1 += s[i];
-    else str2 += s[i];
-  }
-  return str1 + str2;
+  var parteMayus = "";  // Parte que contiene los caracteres en mayúsculas
+  var parteMinus = "";  // Parte que contiene los caracteres en minúsculas
+  s.split('').forEach(elemento => {     // Para cada letra del string:
+    if (elemento === elemento.toUpperCase()) //Si el caracter actual no cambia al pasarlo a Mayúscula:
+      parteMayus += elemento;           // lo mandamos a la parte de las mayúsculas
+    else parteMinus += elemento;        // si cambia, era minúscula, por lo tanto, va a la parte de las minúsculas.
+  });
+  return parteMayus + parteMinus;       // Una vez terminamos de clasificar todas las letras, unimos las dos partes
 }
 
 
@@ -56,21 +67,16 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
-  var fraseInvertida = "";
-  var palabras = str.split(" ");
-  for (var i=0; i<palabras.length; i++) {
-    var plbrInv = "";
-    for (var j=palabras[i].length-1; j>=0; j--) {
-      plbrInv += palabras[i][j];
-    }
-    fraseInvertida += plbrInv + " ";
-  }
-  return fraseInvertida.trim();
-  /*
-  Mejor forma:
-
-  }
-  */
+  
+  var palabras = str.split(' ');
+  var fraseFinal = palabras.map(palActual => {
+    let palInv = [];
+    palActual.split('').forEach(letraActual => {
+      palInv.unshift(letraActual);
+    });
+    return palInv.join('');
+  });
+  return fraseFinal.join(' ');
 } 
 
 
@@ -91,7 +97,7 @@ function deleteAbc(cadena){
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
 
-  return cadena.replace(/[abc]/g,"");
+  return cadena.replace(/[abc]/g,""); // Busca por 'a', 'b' o 'c' y los reemplaza por '' (los borra).
 }
 
 
